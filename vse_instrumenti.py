@@ -35,13 +35,20 @@ def pars_vse(ids_vse):
     count_vse = []
     res_vse_instrumenti = []
 
+    driver.get('https://www.vseinstrumenti.ru/product/termopot-gfgril-gf-tp015-6864355/')
+    time.sleep(5)
+    driver.get('https://www.vseinstrumenti.ru/product/ultratonkaya-vibroplatforma-trenazher-dlya-pohudeniya-planta-vibra-slim-vp-02-2948156/')
+    time.sleep(5)
+    driver.get('https://www.vseinstrumenti.ru/view_goods_by_id_redirect.php?id=2925524')
+    time.sleep(5)
+
     try:
         print(f'[!] Старт парсинга Все Инструменты')
         for id in ids_vse:
             driver.get(id)
             time.sleep(1.5)
             try:
-                driver.find_element(By.CLASS_NAME, 'HjW-1Z')
+                driver.find_element(By.CLASS_NAME, 'Bmh6vJ')
                 result_vse.append('В наличии')
                 count = driver.find_element(By.CLASS_NAME, 'nkoaBr').text
                 count_vse.append(count)

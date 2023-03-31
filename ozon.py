@@ -30,7 +30,6 @@ def pars_ozon(ids_ozon):
       '''
     })
 
-    # ids_ozon = [232219844, 638292146, 730058045, 228322840, 678339628]
     count_ozon = []
     res_ozon = []
     result_ozon = []
@@ -41,7 +40,8 @@ def pars_ozon(ids_ozon):
             driver.get(f'https://www.ozon.ru/product/{id}')
             time.sleep(1.5)
             try:
-                count = driver.find_element(By.XPATH, '/html/body/div[1]/div/div[1]/div[5]/div[3]/div[2]/div[2]/div/div/div/div[1]/div/div/div[1]/div/span[1]/span').text
+                count = driver.find_element(By.CLASS_NAME, 'nq0').text
+
                 result_ozon.append('В наличии')
                 count = count.replace('\u2009', ' ')
                 count_ozon.append(count)
