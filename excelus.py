@@ -11,7 +11,7 @@ def r_excel():
     for sht in sheets:
         sheet = wb[sht]
         max_rows = sheet.max_row
-        # max_rows = 6
+        # max_rows = 2
         ids = []
         for i in range(2, max_rows + 1):
             value = sheet.cell(row=i, column=3).value
@@ -29,12 +29,15 @@ def w_excel(res_all):
 
     sheets = ['mvideo', 'vse_instrumenti', 'ozon']
     j = 0
+    o = 0
+    colls = ['C', 'E', 'F']
 
     for sht in sheets:
 
         sheet = wb[sht]
+        sht = wb['all']
         max_rows = sheet.max_row
-        # max_rows = 6
+        # max_rows = 2
 
         res_ava = res_all[j][0]
         res_cou = res_all[j][1]
@@ -42,8 +45,13 @@ def w_excel(res_all):
         for i in range(2, max_rows + 1):
             col_avaible = 'D' + str(i)
             col_count = 'E' + str(i)
+            collos = colls[o] + str(i)
+            print(collos)
             sheet[col_avaible] = res_ava[i - 2]
             sheet[col_count] = res_cou[i - 2]
+            sht[collos] = res_cou[i - 2]
+            o = o + 1
+
 
         j = j + 1
 
