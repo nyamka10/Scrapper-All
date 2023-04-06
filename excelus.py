@@ -50,7 +50,7 @@ def w_excel(res_all):
     shet = wb['all']
     max_rows = shet.max_row
     # max_rows = 21
-    print(max_rows)
+
     cou_mv = res_all[0][1]
     cou_vi = res_all[1][1]
     cou_oz = res_all[2][1]

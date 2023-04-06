@@ -39,10 +39,11 @@ def pars_mvideo(ids_mvideo):
             time.sleep(2)
 
             try:
-                driver.find_element(By.CLASS_NAME, 'price__main-value')
-                result_mvideo.append('В наличии')
+                # driver.find_element(By.CLASS_NAME, 'price__main-value')
+                # result_mvideo.append('В наличии')
                 cou = driver.find_element(By.CLASS_NAME, 'price--pdp-emphasized-personal-price')
                 count = cou.find_element(By.CLASS_NAME, 'price__main-value').text
+                result_mvideo.append('В наличии')
                 count_mvideo.append(count)
                 print(f'[+] Mvideo {id} : В наличии : {count}')
 
