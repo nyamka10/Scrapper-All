@@ -11,7 +11,7 @@ def r_excel():
     for sht in sheets:
         sheet = wb[sht]
         max_rows = sheet.max_row
-        # max_rows = 21
+        # max_rows = 6
         ids = []
         for i in range(2, max_rows + 1):
             value = sheet.cell(row=i, column=3).value
@@ -34,7 +34,7 @@ def w_excel(res_all):
 
         sheet = wb[sht]
         max_rows = sheet.max_row
-        # max_rows = 21
+        # max_rows = 6
 
         res_ava = res_all[j][0]
         res_cou = res_all[j][1]
@@ -49,7 +49,7 @@ def w_excel(res_all):
 
     shet = wb['all']
     max_rows = shet.max_row
-    # max_rows = 21
+    # max_rows = 6
 
     cou_mv = res_all[0][1]
     cou_vi = res_all[1][1]

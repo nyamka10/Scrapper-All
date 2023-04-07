@@ -40,7 +40,10 @@ def pars_ozon(ids_ozon):
             driver.get(f'https://www.ozon.ru/product/{id}')
             time.sleep(1.5)
             try:
-                count = driver.find_element(By.CLASS_NAME, 'q0n').text
+                try:
+                    count = driver.find_element(By.CLASS_NAME, 'n1q').text
+                except NoSuchElementException:
+                    count = driver.find_element(By.CLASS_NAME, 'q0n').text
 
                 result_ozon.append('В наличии')
                 count = count.replace('\u2009', ' ')
