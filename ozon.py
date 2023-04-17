@@ -16,7 +16,7 @@ def pars_ozon(ids_ozon):
     options = webdriver.ChromeOptions()
     options.add_extension(proxies_extension)
     options.add_argument('--no-sandbox')
-    # options.add_argument("--headless=new")
+    options.add_argument("--headless=new")
     options.add_argument("--disable-blink-features=AutomationControlled")
 
     s = Service(executable_path='path_to_chromedriver')
