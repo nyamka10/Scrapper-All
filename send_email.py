@@ -11,7 +11,7 @@ from datetime import datetime
 def send_email():
     time.sleep(2)
     sender = "nya.prog.bot@gmail.com"
-    password = "eduniicggbqbfyrq"
+    password = ""
     getter = "kostya111000@gmail.com"
 
     server = smtplib.SMTP("smtp.gmail.com", 587)

@@ -15,7 +15,7 @@ def pars_mvideo(ids_mvideo):
     start_time = datetime.now()
 
     options = webdriver.ChromeOptions()
-    options.add_extension(proxies_extension)
+    # options.add_extension(proxies_extension)
     options.add_argument('--no-sandbox')
     options.add_argument("--headless=new")
     driver = webdriver.Chrome(options=options)

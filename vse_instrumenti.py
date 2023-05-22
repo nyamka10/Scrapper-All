@@ -15,7 +15,7 @@ def pars_vse(ids_vse):
     start_time = datetime.now()
 
     options = webdriver.ChromeOptions()
-    options.add_extension(proxies_extension)
+    # options.add_extension(proxies_extension)
     options.add_argument('--no-sandbox')
     options.add_argument("--headless=new")
     options.add_argument("--disable-blink-features=AutomationControlled")
@@ -48,9 +48,9 @@ def pars_vse(ids_vse):
             driver.get(id)
             time.sleep(1.5)
             try:
-                driver.find_element(By.CLASS_NAME, 'Bmh6vJ')
+                driver.find_element(By.CLASS_NAME, 'FBhpWG')
                 result_vse.append('В наличии')
-                count = driver.find_element(By.CLASS_NAME, 'nkoaBr').text
+                count = driver.find_element(By.CLASS_NAME, 'df5X3i').text
                 count_vse.append(count)
                 print(f'[+] ВсеИнтрументы {id} : В наличии : {count}')
             except NoSuchElementException:

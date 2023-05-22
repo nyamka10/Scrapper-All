@@ -14,7 +14,7 @@ proxies_extension = proxies(PROXY_USER, PROXY_PASS, PROXY_HOST, PROXY_PORT)
 def pars_ozon(ids_ozon):
     start_time = datetime.now()
     options = webdriver.ChromeOptions()
-    options.add_extension(proxies_extension)
+    # options.add_extension(proxies_extension)
     options.add_argument('--no-sandbox')
     options.add_argument("--headless=new")
     options.add_argument("--disable-blink-features=AutomationControlled")
