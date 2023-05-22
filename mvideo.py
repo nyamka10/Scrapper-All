@@ -6,6 +6,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
 from proxy_auth import *
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 proxies_extension = proxies(PROXY_USER, PROXY_PASS, PROXY_HOST, PROXY_PORT)
@@ -18,7 +20,8 @@ def pars_mvideo(ids_mvideo):
     # options.add_extension(proxies_extension)
     options.add_argument('--no-sandbox')
     options.add_argument("--headless=new")
-    driver = webdriver.Chrome(options=options)
+    # driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
     driver.implicitly_wait(2)
     driver.maximize_window()
 

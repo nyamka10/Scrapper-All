@@ -6,6 +6,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.common.exceptions import NoSuchElementException
 from proxy_auth import *
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 proxies_extension = proxies(PROXY_USER, PROXY_PASS, PROXY_HOST, PROXY_PORT)
@@ -20,7 +22,8 @@ def pars_ozon(ids_ozon):
     options.add_argument("--disable-blink-features=AutomationControlled")
 
     s = Service(executable_path='path_to_chromedriver')
-    driver = webdriver.Chrome(service=s, options=options)
+    # driver = webdriver.Chrome(service=s, options=options)
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
     driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
         'source': '''
