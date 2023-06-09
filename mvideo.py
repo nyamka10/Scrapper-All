@@ -24,6 +24,13 @@ def pars_mvideo(ids_mvideo):
     driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
     driver.implicitly_wait(2)
     driver.maximize_window()
+    driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
+        "source": """
+              const newProto = navigator.__proto__
+              delete newProto.webdriver
+              navigator.__proto__ = newProto
+              """
+    })
 
     result_mvideo = []
     count_mvideo = []
@@ -66,4 +73,3 @@ def pars_mvideo(ids_mvideo):
         driver.close()
         driver.quit()
         times = datetime.now() - start_time
-        print(f'Время парсинга М Видео : {times}')
